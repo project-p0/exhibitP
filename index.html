@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Product Catalogue</title>
+
+<!-- PWA / installability -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1F2A3D">
+
+<!-- iOS: makes "Add to Home Screen" open full-screen, no Safari chrome -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Catalogue">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icon-192.png">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div class="brand-text">
+        <h1>Catalogue</h1>
+        <p class="brand-sub">Products &amp; variants, at a glance</p>
+      </div>
+    </div>
+    <label class="search">
+      <span class="visually-hidden">Search products</span>
+      <input id="search-input" type="search" placeholder="Search by name or code…" autocomplete="off">
+    </label>
+  </header>
+
+  <nav class="category-nav" id="category-nav" aria-label="Filter by category">
+    <!-- category chips injected by app.js -->
+  </nav>
+
+  <main>
+    <p class="result-count" id="result-count"></p>
+    <section class="grid" id="product-grid" aria-live="polite">
+      <!-- product cards injected by app.js -->
+    </section>
+    <p class="empty-state" id="empty-state" hidden>No products match that search. Try a different name or code.</p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Index of <span id="total-count">0</span> items — data lives in <code>products.json</code>.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
