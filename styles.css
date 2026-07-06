@@ -306,27 +306,33 @@ main {
   padding: 3rem 1rem;
 }
 
-.view-toggle {
+.search-row {
     display: flex;
-    gap: 0.4rem;
-    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.view-btn {
+.view-toggle-btn {
+    display: none;
+    width: 42px;
+    height: 42px;
+
     border: 1px solid var(--line);
-    background: var(--paper);
-    color: var(--ink-soft);
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 0.45rem 0.75rem;
     border-radius: 999px;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    font-size: 1.1rem;
+    font-weight: 800;
+
     cursor: pointer;
+    flex-shrink: 0;
 }
 
-.view-btn[aria-pressed="true"] {
-    background: var(--ink);
-    border-color: var(--ink);
-    color: var(--bone);
+.view-toggle-btn:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
 }
 
 .site-footer {
@@ -400,45 +406,62 @@ main {
       min-width: unset;
   }
 
-  .view-toggle {
-      width: 100%;
-      margin-top: 0.25rem;
-  }
+  
+  .search-row {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-  .grid.compact-view {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.65rem;
-  }
+    .search {
+        flex: 1;
+        max-width: 320px;
+    }
 
-  .grid.compact-view .card {
-      padding: 0.65rem;
-      gap: 0.45rem;
-      border-radius: 8px;
-  }
+    .search input {
+        width: 100%;
+        min-width: unset;
+    }
 
-  .grid.compact-view .swatch {
-      border-radius: 5px;
-  }
+    .view-toggle-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  .grid.compact-view .sku-tag {
-      font-size: 0.58rem;
-      padding: 0.2rem 0.42rem 0.2rem 0.32rem;
-  }
+    .grid.compact-view {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
 
-  .grid.compact-view .card-name {
-      font-size: 0.78rem;
-      line-height: 1.2;
-  }
+    
+    .grid.compact-view .card {
+        padding: 0.65rem;
+        gap: 0.45rem;
+        border-radius: 8px;
+    }
 
-  .grid.compact-view .variant-chip {
-      font-size: 0.6rem;
-      padding: 0.12rem 0.38rem;
-  }
+    .grid.compact-view .card-name {
+        font-size: 0.78rem;
+        line-height: 1.2;
+    }
 
-  .grid.compact-view .out-overlay {
-      font-size: 0.75rem;
-      letter-spacing: 1px;
-      text-align: center;
-  }
+    .grid.compact-view .sku-tag {
+        font-size: 0.58rem;
+        padding: 0.2rem 0.42rem 0.2rem 0.32rem;
+    }
+
+    .grid.compact-view .variant-chip {
+        font-size: 0.6rem;
+        padding: 0.12rem 0.38rem;
+    }
+
+    .grid.compact-view .out-overlay {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
 
 }

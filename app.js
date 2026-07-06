@@ -9,10 +9,10 @@ const emptyState = document.getElementById("empty-state");
 const totalCount = document.getElementById("total-count");
 
 
-const normalViewBtn = document.getElementById("normal-view");
-const compactViewBtn = document.getElementById("compact-view");
 
-let activeView = localStorage.getItem("catalogueView") || "normal";
+const viewToggleBtn = document.getElementById("view-toggle");
+let compactView = localStorage.getItem("compactView") === "true";
+
 
 
 init();
@@ -30,19 +30,15 @@ async function init() {
   render();
   searchInput.addEventListener("input", render);
   
-  applyView();
 
-  normalViewBtn.addEventListener("click", () => {
-    activeView = "normal";
-    localStorage.setItem("catalogueView", activeView);
-    applyView();
+  applyViewMode();
+
+  viewToggleBtn.addEventListener("click", () => {
+    compactView = !compactView;
+    localStorage.setItem("compactView", compactView);
+    applyViewMode();
   });
 
-  compactViewBtn.addEventListener("click", () => {
-    activeView = "compact";
-    localStorage.setItem("catalogueView", activeView);
-    applyView();
-  });
 
 }
 
@@ -106,12 +102,17 @@ function renderCard(p) {
 }
 
 
-function applyView() {
-  grid.classList.toggle("compact-view", activeView === "compact");
 
-  normalViewBtn.setAttribute("aria-pressed", activeView === "normal");
-  compactViewBtn.setAttribute("aria-pressed", activeView === "compact");
-}
+  function applyViewMode() {
+    grid.classList.toggle("compact-view", compactView);
+
+    viewToggleBtn.textContent = compactView ? "▣" : "▦";
+    viewToggleBtn.setAttribute(
+      "aria-label",
+      compactView ? "Switch to large view" : "Switch to compact view"
+    );
+  }
+
 
 
 function escapeHtml(str) {
