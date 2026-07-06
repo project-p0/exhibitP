@@ -264,12 +264,17 @@ main {
     position: relative;
     opacity: 0.45;
     filter: grayscale(100%);
+    border: 3px solid #D9A441;
+    box-shadow: 0 0 8px rgba(217,164,65,.3);
 }
 
 
 .out-overlay {
     position: absolute;
-    inset: 0;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
 
     display: flex;
     align-items: center;
