@@ -65,8 +65,13 @@ function renderCard(p) {
       <div class="variants">
         ${p.variants.map(v => `<span class="variant-chip">${escapeHtml(v)}</span>`).join("")}
       </div>
-      <div class="card-footer">
-        <span class="price">${escapeHtml(p.price)}</span>
+      <div class="card-footer"> 
+      ${
+          /*
+          `<span class="price">${escapeHtml(p.price)}</span>`
+          */
+          ""
+        }
         <span class="stock ${p.stock}">${stockLabel}</span>
       </div>
     </article>
