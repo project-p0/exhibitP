@@ -8,6 +8,13 @@ const resultCount = document.getElementById("result-count");
 const emptyState = document.getElementById("empty-state");
 const totalCount = document.getElementById("total-count");
 
+
+const normalViewBtn = document.getElementById("normal-view");
+const compactViewBtn = document.getElementById("compact-view");
+
+let activeView = localStorage.getItem("catalogueView") || "normal";
+
+
 init();
 
 async function init() {
@@ -22,6 +29,21 @@ async function init() {
   renderCategoryNav();
   render();
   searchInput.addEventListener("input", render);
+  
+  applyView();
+
+  normalViewBtn.addEventListener("click", () => {
+    activeView = "normal";
+    localStorage.setItem("catalogueView", activeView);
+    applyView();
+  });
+
+  compactViewBtn.addEventListener("click", () => {
+    activeView = "compact";
+    localStorage.setItem("catalogueView", activeView);
+    applyView();
+  });
+
 }
 
 function renderCategoryNav() {
@@ -55,6 +77,8 @@ function render() {
   grid.innerHTML = filtered.map(renderCard).join("");
 }
 
+
+
 function renderCard(p) {
   const stockLabel = { in: "In stock", low: "Low stock", out: "Out of stock" }[p.stock] || "";
   return `
@@ -80,6 +104,15 @@ function renderCard(p) {
     </article>
   `;
 }
+
+
+function applyView() {
+  grid.classList.toggle("compact-view", activeView === "compact");
+
+  normalViewBtn.setAttribute("aria-pressed", activeView === "normal");
+  compactViewBtn.setAttribute("aria-pressed", activeView === "compact");
+}
+
 
 function escapeHtml(str) {
   return String(str)
