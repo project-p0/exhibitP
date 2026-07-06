@@ -58,21 +58,24 @@ function render() {
 function renderCard(p) {
   const stockLabel = { in: "In stock", low: "Low stock", out: "Out of stock" }[p.stock] || "";
   return `
-    <article class="card">
+    <article class="card stock-${p.stock}">
+      ${p.stock === "out"? `<div class="out-overlay">OUT OF STOCK</div>` : ""}
       <div class="swatch">${escapeHtml(p.category)}</div>
       <span class="sku-tag">${escapeHtml(p.sku)}</span>
       <h2 class="card-name">${escapeHtml(p.name)}</h2>
       <div class="variants">
         ${p.variants.map(v => `<span class="variant-chip">${escapeHtml(v)}</span>`).join("")}
       </div>
+
       <div class="card-footer"> 
       ${
           /*
           `<span class="price">${escapeHtml(p.price)}</span>`
-          */
+          
+        <span class="stock ${p.stock}">${stockLabel}</span>
+        */
           ""
         }
-        <span class="stock ${p.stock}">${stockLabel}</span>
       </div>
     </article>
   `;
