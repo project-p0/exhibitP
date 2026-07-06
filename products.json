@@ -20,5 +20,19 @@
   { "sku": "EX-5002", "name": "Sample Product Nineteen", "category": "Category E", "variants": ["Standard"], "stock": "in" },
   { "sku": "EX-5003", "name": "Sample Product Twenty", "category": "Category E", "variants": ["A", "B"], "stock": "out" },
   { "sku": "EX-5004", "name": "Sample Product Twenty-One", "category": "Category E", "variants": ["Standard"], "stock": "in" },
-  { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" }
+  { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" },
+  { "sku": "BLS-001", "name": "Black Cherry", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-002", "name": "Blackberry", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-003", "name": "Blue Raz", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-004", "name": "Citrus Chill", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-005", "name": "Coffee", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-006", "name": "Cool Mint", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-007", "name": "Energy Drink", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-008", "name": "Grape Ice", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-009", "name": "Island Breeze", "category": "BLISS", "variants": ["6mg", "Pina Colada"], "stock": "in" },
+  { "sku": "BLS-010", "name": "Mango", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-011", "name": "Sour Apple", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-012", "name": "Spearmint", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-013", "name": "Watermelon Chill", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-014", "name": "Wintergreen", "category": "BLISS", "variants": ["6mg", "12mg"], "stock": "in" }
 ]
