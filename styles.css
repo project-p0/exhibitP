@@ -190,6 +190,23 @@ main {
   font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.swatch-fallback {
+  position: relative;
+  z-index: 1;
+}
+
+.swatch-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 2;
 }
 
 .card-name {

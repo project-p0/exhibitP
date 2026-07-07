@@ -71,6 +71,31 @@ function render() {
   resultCount.textContent = `${filtered.length} of ${PRODUCTS.length} items`;
   emptyState.hidden = filtered.length !== 0;
   grid.innerHTML = filtered.map(renderCard).join("");
+  attachImageFallbacks();
+}
+
+// Looks for images/<SKU>.<ext> for each product, trying a few common
+// extensions in turn. If none exist, the image is removed and the
+// existing placeholder swatch (category label + pattern) shows through.
+const IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
+
+function attachImageFallbacks() {
+  grid.querySelectorAll(".swatch-img").forEach(img => {
+    const sku = img.dataset.sku;
+    let extIndex = 0;
+
+    function tryNextExtension() {
+      if (extIndex >= IMAGE_EXTENSIONS.length) {
+        img.remove(); // no matching image found — fallback label shows through
+        return;
+      }
+      img.src = `images/${sku}.${IMAGE_EXTENSIONS[extIndex]}`;
+      extIndex++;
+    }
+
+    img.addEventListener("error", tryNextExtension);
+    tryNextExtension();
+  });
 }
 
 
@@ -80,7 +105,10 @@ function renderCard(p) {
   return `
     <article class="card stock-${p.stock}">
       ${p.stock === "out"? `<div class="out-overlay">OUT OF STOCK</div>` : ""}
-      <div class="swatch">${escapeHtml(p.category)}</div>
+      <div class="swatch">
+        <span class="swatch-fallback">${escapeHtml(p.category)}</span>
+        <img class="swatch-img" data-sku="${escapeHtml(p.sku)}" alt="${escapeHtml(p.name)}" loading="lazy">
+      </div>
       <span class="sku-tag">${escapeHtml(p.sku)}</span>
       <h2 class="card-name">${escapeHtml(p.name)}</h2>
       <div class="variants">
