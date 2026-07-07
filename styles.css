@@ -397,31 +397,14 @@ main {
   }
 
   .search {
-      width: 100%;
-      margin-top: 0.75rem;
+      display: none;
   }
 
-  .search input {
-      width: min(350px, 90vw);
-      min-width: unset;
-  }
-
-  
-  .search-row {
-        width: 100%;
+    .site-footer {
         display: flex;
-        justify-content: center;
         align-items: center;
-    }
-
-    .search {
-        flex: 1;
-        max-width: 320px;
-    }
-
-    .search input {
-        width: 100%;
-        min-width: unset;
+        justify-content: space-between;
+        gap: 0.75rem;
     }
 
     .view-toggle-btn {
@@ -447,11 +430,6 @@ main {
         line-height: 1.2;
     }
 
-    .grid.compact-view .sku-tag {
-        font-size: 0.58rem;
-        padding: 0.2rem 0.42rem 0.2rem 0.32rem;
-    }
-
     .grid.compact-view .variant-chip {
         font-size: 0.6rem;
         padding: 0.12rem 0.38rem;
@@ -463,5 +441,48 @@ main {
         text-align: center;
     }
 
+    /* SKU becomes plain text on mobile — no tag styling */
+    .sku-tag {
+        background: none;
+        color: var(--ink-soft);
+        font-weight: 600;
+        padding: 0;
+        border-radius: 0;
+    }
+    .sku-tag::before {
+        display: none;
+    }
+
+    /* Product name takes over the mustard tag look on mobile */
+    .card-name {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        align-self: flex-start;
+        background: var(--mustard);
+        color: var(--ink);
+        padding: 0.25rem 0.55rem 0.25rem 0.4rem;
+        border-radius: 4px;
+        position: relative;
+    }
+    .card-name::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--paper);
+        border: 1px solid rgba(31,42,59,0.3);
+        flex-shrink: 0;
+    }
+
+    .grid.compact-view .card-name {
+        font-size: 0.78rem;
+        line-height: 1.2;
+        padding: 0.2rem 0.42rem 0.2rem 0.32rem;
+    }
+
+    .grid.compact-view .sku-tag {
+        font-size: 0.58rem;
+    }
 
 }
