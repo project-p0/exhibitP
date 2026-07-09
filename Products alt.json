@@ -1,0 +1,7 @@
+[
+  { "sku": "TST-001", "name": "Test Item One", "category": "Preview", "price": "$0.00", "variants": ["Standard"], "stock": "in" },
+  { "sku": "TST-002", "name": "Test Item Two", "category": "Preview", "price": "$0.00", "variants": ["A", "B"], "stock": "in" },
+  { "sku": "TST-003", "name": "Test Item Three", "category": "Preview", "price": "$0.00", "variants": ["Small", "Large"], "stock": "low" },
+  { "sku": "TST-004", "name": "Test Item Four", "category": "Draft", "price": "$0.00", "variants": ["Standard"], "stock": "in" },
+  { "sku": "TST-005", "name": "Test Item Five", "category": "Draft", "price": "$0.00", "variants": ["V1", "V2"], "stock": "out" }
+]

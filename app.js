@@ -1,10 +1,8 @@
-let ALL_PRODUCTS = [];
-let MAIN_CATALOG = [];
-let VAULT_CATALOG = [];
 let PRODUCTS = [];
-
+let ALT_PRODUCTS = [];
+let altLoaded = false;
+let showingAlt = false;
 let activeCategory = "All";
-let vaultOpen = false;
 
 const grid = document.getElementById("product-grid");
 const nav = document.getElementById("category-nav");
@@ -12,13 +10,12 @@ const searchInput = document.getElementById("search-input");
 const resultCount = document.getElementById("result-count");
 const emptyState = document.getElementById("empty-state");
 const totalCount = document.getElementById("total-count");
-const vaultToggle = document.getElementById("vault-toggle");
-const brandTitle = document.querySelector(".brand-text h1");
+const brandMark = document.querySelector(".brand-mark");
+
 
 
 const viewToggleBtn = document.getElementById("view-toggle");
 let compactView = localStorage.getItem("compactView") === "true";
-
 
 
 
@@ -27,22 +24,16 @@ init();
 async function init() {
   try {
     const res = await fetch("products.json");
-    ALL_PRODUCTS = await res.json();
+    PRODUCTS = await res.json();
   } catch (err) {
     grid.innerHTML = `<p class="empty-state">Couldn't load products.json — check the file is in the same folder.</p>`;
     return;
   }
   totalCount.textContent = PRODUCTS.length;
-  
-  MAIN_CATALOG = ALL_PRODUCTS.filter(p => p.catalog !== "vault");
-  VAULT_CATALOG = ALL_PRODUCTS.filter(p => p.catalog === "vault");
-
-  PRODUCTS = MAIN_CATALOG;
-
   renderCategoryNav();
   render();
   searchInput.addEventListener("input", render);
-  vaultToggle.addEventListener("click", toggleVault);
+  
 
   applyViewMode();
 
@@ -52,11 +43,47 @@ async function init() {
     applyViewMode();
   });
 
+  if (brandMark) {
+    brandMark.style.cursor = "pointer";
+    brandMark.setAttribute("role", "button");
+    brandMark.setAttribute("tabindex", "0");
+    brandMark.addEventListener("click", toggleCollection);
+    brandMark.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleCollection();
+      }
+    });
+  }
 
 }
 
+function activeProducts() {
+  return showingAlt ? ALT_PRODUCTS : PRODUCTS;
+}
+
+async function toggleCollection() {
+  if (!showingAlt && !altLoaded) {
+    try {
+      const res = await fetch("products-alt.json");
+      ALT_PRODUCTS = await res.json();
+      altLoaded = true;
+    } catch (err) {
+      console.warn("Could not load the alternate collection:", err);
+      return;
+    }
+  }
+
+  showingAlt = !showingAlt;
+  activeCategory = "All";
+  searchInput.value = "";
+  totalCount.textContent = activeProducts().length;
+  renderCategoryNav();
+  render();
+}
+
 function renderCategoryNav() {
-  const categories = ["All", ...new Set(PRODUCTS.map(p => p.category))];
+  const categories = ["All", ...new Set(activeProducts().map(p => p.category))];
   nav.innerHTML = categories.map(cat => `
     <button class="chip" data-cat="${escapeHtml(cat)}" aria-pressed="${cat === activeCategory}">${escapeHtml(cat)}</button>
   `).join("");
@@ -72,8 +99,9 @@ function renderCategoryNav() {
 
 function render() {
   const query = searchInput.value.trim().toLowerCase();
+  const source = activeProducts();
 
-  const filtered = PRODUCTS.filter(p => {
+  const filtered = source.filter(p => {
     const inCategory = activeCategory === "All" || p.category === activeCategory;
     const matchesQuery = !query ||
       p.name.toLowerCase().includes(query) ||
@@ -81,32 +109,10 @@ function render() {
     return inCategory && matchesQuery;
   });
 
-  resultCount.textContent = `${filtered.length} of ${PRODUCTS.length} items`;
+  resultCount.textContent = `${filtered.length} of ${source.length} items`;
   emptyState.hidden = filtered.length !== 0;
   grid.innerHTML = filtered.map(renderCard).join("");
   attachImageFallbacks();
-}
-
-function toggleVault() {
-  vaultOpen = !vaultOpen;
-
-  PRODUCTS = vaultOpen ? VAULT_CATALOG : MAIN_CATALOG;
-
-  activeCategory = "All";
-
-  if (brandTitle) {
-    brandTitle.textContent = vaultOpen ? "Vault" : "Catalogue";
-  }
-
-  vaultToggle.setAttribute(
-    "aria-label",
-    vaultOpen ? "Close Vault" : "Open Vault"
-  );
-
-  vaultToggle.classList.toggle("vault-active", vaultOpen);
-
-  renderCategoryNav();
-  render();
 }
 
 // Looks for images/<SKU>.<ext> for each product, trying a few common
