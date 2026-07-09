@@ -69,6 +69,5 @@
   { "sku": "VEL-014", "name": "Polar Mint Max", "category": "VELO", "variants": ["14mg"], "stock": "out" },
   { "sku": "VEL-015", "name": "Ruby Berry", "category": "VELO", "variants": ["14mg"], "stock": "in" },
   { "sku": "VEL-016", "name": "Max Freeze", "category": "VELO", "variants": ["17mg"], "stock": "out" },
-  { "sku": "VEL-017", "name": "X Freeze Max", "category": "VELO", "variants": ["21mg"], "stock": "out" },  
-  { "sku": "VLT-002", "name": "Vault Product Two", "category": "VAULT", "variants": ["20mg"], "stock": "out", "catalog": "vault"}
+  { "sku": "VEL-017", "name": "X Freeze Max", "category": "VELO", "variants": ["21mg"], "stock": "out" }
 ]
