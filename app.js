@@ -1,5 +1,10 @@
+let ALL_PRODUCTS = [];
+let MAIN_CATALOG = [];
+let VAULT_CATALOG = [];
 let PRODUCTS = [];
+
 let activeCategory = "All";
+let vaultOpen = false;
 
 const grid = document.getElementById("product-grid");
 const nav = document.getElementById("category-nav");
@@ -7,11 +12,13 @@ const searchInput = document.getElementById("search-input");
 const resultCount = document.getElementById("result-count");
 const emptyState = document.getElementById("empty-state");
 const totalCount = document.getElementById("total-count");
-
+const vaultToggle = document.getElementById("vault-toggle");
+const brandTitle = document.querySelector(".brand-text h1");
 
 
 const viewToggleBtn = document.getElementById("view-toggle");
 let compactView = localStorage.getItem("compactView") === "true";
+
 
 
 
@@ -20,16 +27,22 @@ init();
 async function init() {
   try {
     const res = await fetch("products.json");
-    PRODUCTS = await res.json();
+    ALL_PRODUCTS = await res.json();
   } catch (err) {
     grid.innerHTML = `<p class="empty-state">Couldn't load products.json — check the file is in the same folder.</p>`;
     return;
   }
   totalCount.textContent = PRODUCTS.length;
+  
+  MAIN_CATALOG = ALL_PRODUCTS.filter(p => p.catalog !== "vault");
+  VAULT_CATALOG = ALL_PRODUCTS.filter(p => p.catalog === "vault");
+
+  PRODUCTS = MAIN_CATALOG;
+
   renderCategoryNav();
   render();
   searchInput.addEventListener("input", render);
-  
+  vaultToggle.addEventListener("click", toggleVault);
 
   applyViewMode();
 
@@ -72,6 +85,28 @@ function render() {
   emptyState.hidden = filtered.length !== 0;
   grid.innerHTML = filtered.map(renderCard).join("");
   attachImageFallbacks();
+}
+
+function toggleVault() {
+  vaultOpen = !vaultOpen;
+
+  PRODUCTS = vaultOpen ? VAULT_CATALOG : MAIN_CATALOG;
+
+  activeCategory = "All";
+
+  if (brandTitle) {
+    brandTitle.textContent = vaultOpen ? "Vault" : "Catalogue";
+  }
+
+  vaultToggle.setAttribute(
+    "aria-label",
+    vaultOpen ? "Close Vault" : "Open Vault"
+  );
+
+  vaultToggle.classList.toggle("vault-active", vaultOpen);
+
+  renderCategoryNav();
+  render();
 }
 
 // Looks for images/<SKU>.<ext> for each product, trying a few common
