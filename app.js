@@ -9,7 +9,6 @@ const nav = document.getElementById("category-nav");
 const searchInput = document.getElementById("search-input");
 const resultCount = document.getElementById("result-count");
 const emptyState = document.getElementById("empty-state");
-const totalCount = document.getElementById("total-count");
 const brandMark = document.querySelector(".brand-mark");
 
 
@@ -29,7 +28,6 @@ async function init() {
     grid.innerHTML = `<p class="empty-state">Couldn't load products.json — check the file is in the same folder.</p>`;
     return;
   }
-  totalCount.textContent = PRODUCTS.length;
   renderCategoryNav();
   render();
   searchInput.addEventListener("input", render);
@@ -77,7 +75,6 @@ async function toggleCollection() {
   showingAlt = !showingAlt;
   activeCategory = "All";
   searchInput.value = "";
-  totalCount.textContent = activeProducts().length;
   renderCategoryNav();
   render();
 }

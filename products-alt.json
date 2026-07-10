@@ -1,7 +1,13 @@
 [
-  { "sku": "TST-001", "name": "Test Item One", "category": "Preview", "price": "$0.00", "variants": ["Standard"], "stock": "in" },
-  { "sku": "TST-002", "name": "Test Item Two", "category": "Preview", "price": "$0.00", "variants": ["A", "B"], "stock": "in" },
-  { "sku": "TST-003", "name": "Test Item Three", "category": "Preview", "price": "$0.00", "variants": ["Small", "Large"], "stock": "low" },
-  { "sku": "TST-004", "name": "Test Item Four", "category": "Draft", "price": "$0.00", "variants": ["Standard"], "stock": "in" },
-  { "sku": "TST-005", "name": "Test Item Five", "category": "Draft", "price": "$0.00", "variants": ["V1", "V2"], "stock": "out" }
+  { "sku": "GB-001", "name": "Miami Mint", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-002", "name": "Watermelon Ice", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-003", "name": "Sour Apple", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-004", "name": "Sour Mango Pineapple", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-005", "name": "Strawberry Kiwi", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-006", "name": "Peach Perfect Slush", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-007", "name": "Blackberry B-Burst", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-008", "name": "Sour Fcuking Fab", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-009", "name": "Cola Slush", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-010", "name": "Blue Razz Ice", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-011", "name": "Cool Mint", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "out" }
 ]

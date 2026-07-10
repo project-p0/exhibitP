@@ -407,6 +407,10 @@ main {
 
   }
 
+  main {
+    padding-top: 0.85rem;
+  }
+
   .brand {
       display: flex;
       align-items: center;
