@@ -5,9 +5,8 @@
   { "sku": "GB-004", "name": "Sour Mango Pineapple", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
   { "sku": "GB-005", "name": "Strawberry Kiwi", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
   { "sku": "GB-006", "name": "Peach Perfect Slush", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
-  { "sku": "GB-007", "name": "Blackberry B-Burst", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
+  { "sku": "GB-007", "name": "Blackberry B-Pop", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
   { "sku": "GB-008", "name": "Sour Fcuking Fab", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
   { "sku": "GB-009", "name": "Cola Slush", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
-  { "sku": "GB-010", "name": "Blue Razz Ice", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" },
-  { "sku": "GB-011", "name": "Cool Mint", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "out" }
+  { "sku": "GB-010", "name": "Blue Razz Ice", "category": "GEEKBAR PULSE X", "price": "$0.00", "variants": ["5%"], "stock": "in" }
 ]
