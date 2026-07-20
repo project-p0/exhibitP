@@ -69,5 +69,9 @@
   { "sku": "VEL-014", "name": "Polar Mint Max", "category": "VELO", "variants": ["14mg"], "stock": "out" },
   { "sku": "VEL-015", "name": "Ruby Berry", "category": "VELO", "variants": ["14mg"], "stock": "in" },
   { "sku": "VEL-016", "name": "Max Freeze", "category": "VELO", "variants": ["17mg"], "stock": "out" },
-  { "sku": "VEL-017", "name": "X Freeze Max", "category": "VELO", "variants": ["21mg"], "stock": "out" }
+  { "sku": "VEL-017", "name": "X Freeze Max", "category": "VELO", "variants": ["21mg"], "stock": "out" },
+  { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
+  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "in" },
+  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
+  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" }
 ]
