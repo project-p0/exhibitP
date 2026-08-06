@@ -71,8 +71,8 @@
   { "sku": "PBL-007", "name": "Strawberry Lychee", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
   { "sku": "PBL-008", "name": "Grape Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
   { "sku": "PBL-009", "name": "Mango Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
-  { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" },
-  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "out" },
-  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" },
-  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" }
+  { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
+  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "in" },
+  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
+  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" }
 ]
