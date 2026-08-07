@@ -20,5 +20,14 @@
     { "sku": "EX-5002", "name": "Sample Product Nineteen", "category": "Category E", "variants": ["Standard"], "stock": "in" },
     { "sku": "EX-5003", "name": "Sample Product Twenty", "category": "Category E", "variants": ["A", "B"], "stock": "out" },
     { "sku": "EX-5004", "name": "Sample Product Twenty-One", "category": "Category E", "variants": ["Standard"], "stock": "in" },
-    { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" }
+    { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" },
+    { "sku": "PBL-001", "name": "Ice Cold Mini", "category": "PABLO", "variants": ["20mg"], "stock": "out" },
+    { "sku": "PBL-002", "name": "Ice Cold XXL", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
+    { "sku": "PBL-003", "name": "Ice Cold", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
+    { "sku": "PBL-004", "name": "Frosted Mint", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "PBL-005", "name": "Frosted Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "PBL-006", "name": "Bubblegum", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "PBL-007", "name": "Strawberry Lychee", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "PBL-008", "name": "Grape Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "PBL-009", "name": "Mango Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" }
 ]
