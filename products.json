@@ -63,7 +63,7 @@
   { "sku": "NCZ-005", "name": "Miami Mint", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
   { "sku": "NCZ-006", "name": "Rainbow Candy", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
   { "sku": "NCZ-007", "name": "Root Beer", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
-
+  { "isDivider": true, "category": "NICOZY" },
   { "sku": "NCZ-008", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
   { "sku": "NCZ-009", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
   { "sku": "ZYN-001", "name": "Apple Mint", "category": "ZYN", "variants": ["20mg"], "stock": "in" },

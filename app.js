@@ -80,7 +80,7 @@ async function toggleCollection() {
 }
 
 function renderCategoryNav() {
-  const categories = ["All", ...new Set(activeProducts().map(p => p.category))];
+  const categories = ["All", ...new Set(activeProducts().filter(p => !p.isDivider).map(p => p.category))];
   nav.innerHTML = categories.map(cat => `
     <button class="chip" data-cat="${escapeHtml(cat)}" aria-pressed="${cat === activeCategory}">${escapeHtml(cat)}</button>
   `).join("");
@@ -97,8 +97,14 @@ function renderCategoryNav() {
 function render() {
   const query = searchInput.value.trim().toLowerCase();
   const source = activeProducts();
+  const realProducts = source.filter(p => !p.isDivider);
 
-  const filtered = source.filter(p => {
+  const displayItems = source.filter(p => {
+    if (p.isDivider) {
+      // only show a divider when its category is actually on screen,
+      // and hide it while searching (a floating gap mid-search looks broken)
+      return !query && (activeCategory === "All" || activeCategory === p.category);
+    }
     const inCategory = activeCategory === "All" || p.category === activeCategory;
     const matchesQuery = !query ||
       p.name.toLowerCase().includes(query) ||
@@ -106,9 +112,12 @@ function render() {
     return inCategory && matchesQuery;
   });
 
-  resultCount.textContent = `${filtered.length} of ${source.length} items`;
-  emptyState.hidden = filtered.length !== 0;
-  grid.innerHTML = filtered.map(renderCard).join("");
+  const shownCount = displayItems.filter(p => !p.isDivider).length;
+  resultCount.textContent = `${shownCount} of ${realProducts.length} items`;
+  emptyState.hidden = shownCount !== 0;
+  grid.innerHTML = displayItems
+    .map(p => p.isDivider ? `<div class="row-break" aria-hidden="true"></div>` : renderCard(p))
+    .join("");
   attachImageFallbacks();
 }
 

@@ -167,6 +167,11 @@ main {
   gap: 1rem;
 }
 
+.row-break {
+  grid-column: 1 / -1;
+  height: 0.75rem;
+}
+
 .card {
   background: var(--paper);
   border: 1px solid var(--line);
