@@ -115,9 +115,18 @@ function render() {
   const shownCount = displayItems.filter(p => !p.isDivider).length;
   resultCount.textContent = `${shownCount} of ${realProducts.length} items`;
   emptyState.hidden = shownCount !== 0;
-  grid.innerHTML = displayItems
-    .map(p => p.isDivider ? `<div class="row-break" aria-hidden="true"></div>` : renderCard(p))
-    .join("");
+
+  let forceRowStart = false;
+  const cardsHtml = [];
+  for (const p of displayItems) {
+    if (p.isDivider) {
+      forceRowStart = true;
+      continue; // renders nothing itself — just flags the next real card
+    }
+    cardsHtml.push(renderCard(p, forceRowStart));
+    forceRowStart = false;
+  }
+  grid.innerHTML = cardsHtml.join("");
   attachImageFallbacks();
 }
 
@@ -147,10 +156,10 @@ function attachImageFallbacks() {
 
 
 
-function renderCard(p) {
+function renderCard(p, forceRowStart = false) {
   const stockLabel = { in: "In stock", low: "Low stock", out: "Out of stock" }[p.stock] || "";
   return `
-    <article class="card stock-${p.stock}">
+    <article class="card stock-${p.stock}${forceRowStart ? " row-start" : ""}">
       ${p.stock === "out"? `<div class="out-overlay">OUT OF STOCK</div>` : ""}
       <div class="swatch">
         <span class="swatch-fallback">${escapeHtml(p.category)}</span>

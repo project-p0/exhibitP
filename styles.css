@@ -167,9 +167,8 @@ main {
   gap: 1rem;
 }
 
-.row-break {
-  grid-column: 1 / -1;
-  height: 0.75rem;
+.row-start {
+  grid-column-start: 1;
 }
 
 .card {
