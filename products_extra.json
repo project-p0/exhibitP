@@ -29,5 +29,15 @@
     { "sku": "PBL-006", "name": "Bubblegum", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
     { "sku": "PBL-007", "name": "Strawberry Lychee", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
     { "sku": "PBL-008", "name": "Grape Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
-    { "sku": "PBL-009", "name": "Mango Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" }
+    { "sku": "PBL-009", "name": "Mango Ice", "category": "PABLO", "variants": ["30mg"], "stock": "out" },
+    { "sku": "NCZ-001", "name": "Cool Mint", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-002", "name": "Dragon Lychee", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-003", "name": "Energy Drink", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-004", "name": "Fizzy Cola", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-005", "name": "Miami Mint", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-006", "name": "Rainbow Candy", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "sku": "NCZ-007", "name": "Root Beer", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+    { "isDivider": true, "category": "NICOZY" },
+    { "sku": "NCZ-008", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
+    { "sku": "NCZ-009", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" }
 ]
