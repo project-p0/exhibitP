@@ -13,6 +13,7 @@
   { "sku": "BLS-012", "name": "Spearmint", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
   { "sku": "BLS-013", "name": "Watermelon Chill", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
   { "sku": "BLS-014", "name": "Wintergreen", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+
   { "sku": "VEL-001", "name": "Breezy Mango", "category": "VELO", "variants": ["6mg"], "stock": "in" },
   { "sku": "VEL-002", "name": "Caribbean Spirit", "category": "VELO", "variants": ["10mg", "Pina Colada"], "stock": "in" },
   { "sku": "VEL-003", "name": "Crispy Peppermint", "category": "VELO", "variants": ["10mg"], "stock": "low" },
@@ -31,6 +32,7 @@
   { "sku": "VEL-015", "name": "Ruby Berry", "category": "VELO", "variants": ["14mg"], "stock": "in" },
   { "sku": "VEL-016", "name": "Max Freeze", "category": "VELO", "variants": ["17mg"], "stock": "out" },
   { "sku": "VEL-017", "name": "X Freeze Max", "category": "VELO", "variants": ["21mg"], "stock": "out" },
+
   { "sku": "ZLT-001", "name": "Cinnamon", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-002", "name": "Coffee", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-003", "name": "Cola Fizz", "category": "ZOLT", "variants": ["15mg", "Coca-Cola"], "stock": "in" },
@@ -51,17 +53,32 @@
   { "sku": "ZLT-018", "name": "Watermelon Wave", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-019", "name": "Wintergreen", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-020", "name": "Classic Tobacco", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
+
   { "sku": "WFX-001", "name": "Mint", "category": "WHITE FOX", "variants": ["12mg", "Mint Slim"], "stock": "out" },
   { "sku": "WFX-002", "name": "Double Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "in" },
   { "sku": "WFX-003", "name": "Peppered Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "out" },
   { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "in" },
   { "sku": "WFX-005", "name": "Black Edition", "category": "WHITE FOX", "variants": ["22.5mg"], "stock": "out" },
+
   { "sku": "ZYN-001", "name": "Apple Mint", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
   { "sku": "ZYN-002", "name": "Cool Watermelon", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
   { "sku": "ZYN-003", "name": "Icy Mint", "category": "ZYN", "variants": ["20mg"], "stock": "out" },
   { "sku": "ZYN-004", "name": "Skittles", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
   { "sku": "ZYN-005", "name": "Triple Berry", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
   { "sku": "ZYN-006", "name": "Wintergreen", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
+
+  { "sku": "NCZ-002", "name": "Energy Drink", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-003", "name": "Fizzy Cola", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-007", "name": "Cool Mint", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-009", "name": "Miami Mint", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-011", "name": "Rainbow Candy", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-014", "name": "Root Beer", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },
+  { "sku": "NCZ-017", "name": "Dragon Lychee", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },  
+  { "isDivider": true, "category": "NICOZY" },
+  { "sku": "NCZ-007S", "name": "Cool Mint", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
+  { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
+  { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
+
   { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
   { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "in" },
   { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
