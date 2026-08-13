@@ -81,6 +81,6 @@
 
   { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
   { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "in" },
-  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
+  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" },
   { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" }
 ]
