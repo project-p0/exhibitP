@@ -79,8 +79,18 @@
   { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
   { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
 
+  { "sku": "ZP-006", "name": "GB Ice", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
+  { "sku": "ZP-007", "name": "Cool Mint", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
+  { "sku": "ZP-008", "name": "Wintergreen", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
+  { "sku": "ZP-009", "name": "Peppermint", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
+  { "sku": "ZP-001", "name": "Banana", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+  { "sku": "ZP-002", "name": "Ice Energy", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+  { "sku": "ZP-003", "name": "GB Ice", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+  { "sku": "ZP-004", "name": "Strawberry Kiwi Ice", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+  { "sku": "ZP-005", "name": "Strawberry", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+
   { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
-  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "in" },
+  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "out" },
   { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" },
-  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" }
+  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" }
 ]
