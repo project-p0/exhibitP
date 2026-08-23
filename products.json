@@ -44,7 +44,7 @@
   { "sku": "ZLT-009", "name": "Orange", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-010", "name": "Peach", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-011", "name": "Peppermint", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
-  { "sku": "ZLT-012", "name": "Pink Lemonade", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
+  { "sku": "ZLT-012", "name": "Pink Lemonade", "category": "ZOLT", "variants": ["15mg"], "stock": "out" },
   { "sku": "ZLT-013", "name": "Sour Apple", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-014", "name": "Spearmint", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-015", "name": "Strawberry", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
@@ -57,7 +57,7 @@
   { "sku": "WFX-001", "name": "Mint", "category": "WHITE FOX", "variants": ["12mg", "Mint Slim"], "stock": "out" },
   { "sku": "WFX-002", "name": "Double Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "in" },
   { "sku": "WFX-003", "name": "Peppered Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "out" },
-  { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "in" },
+  { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "out" },
   { "sku": "WFX-005", "name": "Black Edition", "category": "WHITE FOX", "variants": ["22.5mg"], "stock": "out" },
 
   { "sku": "ZYN-001", "name": "Apple Mint", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
@@ -76,8 +76,8 @@
   { "sku": "NCZ-017", "name": "Dragon Lychee", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },  
   { "isDivider": true, "category": "NICOZY" },
   { "sku": "NCZ-007S", "name": "Cool Mint", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
-  { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
-  { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
+  { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
+  { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
 
   { "sku": "ZP-006", "name": "GB Ice", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
   { "sku": "ZP-007", "name": "Cool Mint", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
@@ -87,10 +87,6 @@
   { "sku": "ZP-002", "name": "Ice Energy", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
   { "sku": "ZP-003", "name": "GB Ice", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
   { "sku": "ZP-004", "name": "Strawberry Kiwi Ice", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
-  { "sku": "ZP-005", "name": "Strawberry", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" },
+  { "sku": "ZP-005", "name": "Strawberry", "category": "Z-POUCHES", "variants": ["21mg"], "stock": "in" }
 
-  { "sku": "ICE-001", "name": "Bubblegum", "category": "ICEBERG", "variants": ["40mg"], "stock": "in" },
-  { "sku": "ICE-002", "name": "Cola", "category": "ICEBERG", "variants": ["35mg"], "stock": "out" },
-  { "sku": "ICE-003", "name": "Energy", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" },
-  { "sku": "ICE-004", "name": "Menthol", "category": "ICEBERG", "variants": ["40mg"], "stock": "out" }
 ]
