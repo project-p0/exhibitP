@@ -54,10 +54,10 @@
   { "sku": "ZLT-019", "name": "Wintergreen", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-020", "name": "Classic Tobacco", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
 
-  { "sku": "WFX-001", "name": "Mint", "category": "WHITE FOX", "variants": ["12mg", "Mint Slim"], "stock": "out" },
-  { "sku": "WFX-002", "name": "Double Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "out" },
+  { "sku": "WFX-001", "name": "Mint", "category": "WHITE FOX", "variants": ["12mg", "Mint Slim"], "stock": "in" },
+  { "sku": "WFX-002", "name": "Double Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "in" },
   { "sku": "WFX-003", "name": "Peppered Mint", "category": "WHITE FOX", "variants": ["12mg"], "stock": "out" },
-  { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "out" },
+  { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "in" },
   { "sku": "WFX-005", "name": "Black Edition", "category": "WHITE FOX", "variants": ["22.5mg"], "stock": "out" },
 
   { "sku": "ZYN-001", "name": "Apple Mint", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
@@ -76,8 +76,8 @@
   { "sku": "NCZ-017", "name": "Dragon Lychee", "category": "NICOZY", "variants": ["9mg"], "stock": "in" },  
   { "isDivider": true, "category": "NICOZY" },
   { "sku": "NCZ-007S", "name": "Cool Mint", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
-  { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
-  { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "out" },
+  { "sku": "NCZ-008S", "name": "Spearmint", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
+  { "sku": "NCZ-010S", "name": "Wintergreen", "category": "NICOZY", "variants": ["20mg"], "stock": "in" },
 
   { "sku": "ZP-006", "name": "GB Ice", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
   { "sku": "ZP-007", "name": "Cool Mint", "category": "Z-POUCHES", "variants": ["6mg"], "stock": "in" },
