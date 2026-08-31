@@ -19,7 +19,7 @@
   { "sku": "VEL-003", "name": "Crispy Peppermint", "category": "VELO", "variants": ["10mg"], "stock": "low" },
   { "sku": "VEL-005", "name": "Frosty Grapefruit", "category": "VELO", "variants": ["10mg"], "stock": "low" },
   { "sku": "VEL-006", "name": "Icy Berries", "category": "VELO", "variants": ["10mg"], "stock": "low" },
-  { "sku": "VEL-007", "name": "Lime Flame", "category": "VELO", "variants": ["10mg"], "stock": "low" },
+  { "sku": "VEL-007", "name": "Lime Flame", "category": "VELO", "variants": ["10mg"], "stock": "out" },
   { "sku": "VEL-008", "name": "Orange Ice", "category": "VELO", "variants": ["10mg"], "stock": "in" },
   { "sku": "VEL-009", "name": "Zest Flame", "category": "VELO", "variants": ["10mg"], "stock": "low" },
   { "sku": "VEL-018", "name": "Royal Purple", "category": "VELO", "variants": ["10mg","Grapes"], "stock": "in" },
