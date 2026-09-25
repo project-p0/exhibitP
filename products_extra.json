@@ -21,6 +21,10 @@
     { "sku": "EX-5003", "name": "Sample Product Twenty", "category": "Category E", "variants": ["A", "B"], "stock": "out" },
     { "sku": "EX-5004", "name": "Sample Product Twenty-One", "category": "Category E", "variants": ["Standard"], "stock": "in" },
     { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" },
+    { "sku": "VEL-007", "name": "Lime Flame", "category": "VELO", "variants": ["10mg"], "stock": "out" },
+    { "sku": "VEL-009", "name": "Zest Flame", "category": "VELO", "variants": ["10mg"], "stock": "out" },
+
+
     { "sku": "PBL-001", "name": "Ice Cold Mini", "category": "PABLO", "variants": ["20mg"], "stock": "out" },
     { "sku": "PBL-002", "name": "Ice Cold XXL", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
     { "sku": "PBL-003", "name": "Ice Cold", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
