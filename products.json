@@ -61,7 +61,7 @@
   { "sku": "ZLT-015", "name": "Strawberry", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-016", "name": "Vanilla", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-017", "name": "Vintage", "category": "ZOLT", "variants": ["15mg", "Grape"], "stock": "in" },
-  { "sku": "ZLT-018", "name": "Watermelon Wave", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
+  { "sku": "ZLT-018", "name": "Watermelon Wave", "category": "ZOLT", "variants": ["15mg"], "stock": "out" },
   { "sku": "ZLT-019", "name": "Wintergreen", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZLT-020", "name": "Classic Tobacco", "category": "ZOLT", "variants": ["15mg"], "stock": "in" },
 
