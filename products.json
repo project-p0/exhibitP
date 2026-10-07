@@ -39,6 +39,7 @@
   { "sku": "OVNS-06-006", "name": "MANGO MARVEL", "category": "OVNS","variants": ["6mg"], "stock": "in" },
   { "isDivider": true, "category": "OVNS" },
   { "sku": "OVNS-21-001", "name": "COOL MINT", "category": "OVNS", "variants": ["21mg"], "stock": "in" },
+  { "sku": "OVNS-21-002", "name": "PEPPERMINT", "category": "OVNS", "variants": ["21mg"], "stock": "in" },
   { "sku": "OVNS-21-003", "name": "FRESH SPEARMINT", "category": "OVNS", "variants": ["21mg"], "stock": "in" },
   { "sku": "OVNS-21-004", "name": "WINTERGREEN", "category": "OVNS", "variants": ["21mg"], "stock": "in" },
   { "sku": "OVNS-21-005", "name": "BUBBLICIOUS", "category": "OVNS", "variants": ["21mg", "Bubble Gum"], "stock": "in" },
