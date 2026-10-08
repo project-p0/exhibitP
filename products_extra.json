@@ -23,8 +23,13 @@
     { "sku": "EX-5005", "name": "Sample Product Twenty-Two", "category": "Category E", "variants": ["Left", "Right", "Universal"], "stock": "in" },
     { "sku": "VEL-007", "name": "Lime Flame", "category": "VELO", "variants": ["10mg"], "stock": "out" },
     { "sku": "VEL-009", "name": "Zest Flame", "category": "VELO", "variants": ["10mg"], "stock": "out" },
+    { "sku": "VEL-004", "name": "Ice Cool", "category": "VELO", "variants": ["10mg"], "stock": "out" },
+    { "sku": "VEL-010", "name": "Cool Storm", "category": "VELO", "variants": ["11mg"], "stock": "out" },
+    { "sku": "VEL-012", "name": "Freezing Peppermint", "category": "VELO", "variants": ["12mg"], "stock": "out" },
+    { "sku": "VEL-014", "name": "Polar Mint Max", "category": "VELO", "variants": ["14mg"], "stock": "out" },
 
-
+    { "sku": "ZYN-005", "name": "Triple Berry", "category": "ZYN", "variants": ["20mg"], "stock": "in" },
+    { "sku": "ZYN-001", "name": "Apple Mint", "category": "ZYN", "variants": ["20mg"], "stock": "out" },
     { "sku": "PBL-001", "name": "Ice Cold Mini", "category": "PABLO", "variants": ["20mg"], "stock": "out" },
     { "sku": "PBL-002", "name": "Ice Cold XXL", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
     { "sku": "PBL-003", "name": "Ice Cold", "category": "PABLO", "variants": ["24mg"], "stock": "out" },
