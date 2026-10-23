@@ -10,7 +10,7 @@
   { "sku": "BLS-009", "name": "Island Breeze", "category": "BLISS", "variants": ["6mg", "Pina Colada"], "stock": "in" },
   { "sku": "BLS-010", "name": "Mango", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
   { "sku": "BLS-011", "name": "Sour Apple", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
-  { "sku": "BLS-012", "name": "Spearmint", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
+  { "sku": "BLS-012", "name": "Spearmint", "category": "BLISS", "variants": ["6mg"], "stock": "out" },
   { "sku": "BLS-013", "name": "Watermelon Chill", "category": "BLISS", "variants": ["6mg"], "stock": "in" },
   { "sku": "BLS-014", "name": "Wintergreen", "category": "BLISS", "variants": ["6mg"], "stock": "out" },
 
@@ -67,11 +67,11 @@
   { "sku": "WFX-004", "name": "Full Charge", "category": "WHITE FOX", "variants": ["16mg"], "stock": "in" },
   { "sku": "WFX-005", "name": "Black Edition", "category": "WHITE FOX", "variants": ["22.5mg"], "stock": "out" },
 
+  { "sku": "ZYN-012", "name": "Cherry Cola", "category": "ZYN", "variants": ["9mg"], "stock": "in" },
   { "sku": "ZYN-002", "name": "Cool Watermelon", "category": "ZYN", "variants": ["11mg"], "stock": "in" },
   { "sku": "ZYN-010", "name": "Cool Blueberry", "category": "ZYN", "variants": ["11mg"], "stock": "in" },  
   { "sku": "ZYN-004", "name": "Skittles", "category": "ZYN", "variants": ["11mg"], "stock": "in" },
   { "sku": "ZYN-011", "name": "Sour Ruby", "category": "ZYN", "variants": ["11mg"], "stock": "in" },
-  { "sku": "ZYN-012", "name": "Cherry Cola", "category": "ZYN", "variants": ["11mg"], "stock": "in" },
   { "sku": "ZYN-003", "name": "Cool Mint Ice", "category": "ZYN", "variants": ["16.5mg"], "stock": "in" },
   { "sku": "ZYN-006", "name": "Wintergreen", "category": "ZYN", "variants": ["15mg"], "stock": "in" },
   { "sku": "ZYN-007", "name": "Icy Blue Razz", "category": "ZYN", "variants": ["15mg"], "stock": "in" },
