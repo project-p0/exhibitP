@@ -90,6 +90,7 @@ function renderCategoryNav() {
       activeCategory = btn.dataset.cat;
       nav.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b === btn));
       render();
+      btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     });
   });
 }
