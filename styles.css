@@ -150,6 +150,18 @@ body {
   background: var(--ink);
   color: var(--bone);
 }
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.8rem;
+}
+.chip.filter-btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
 .chip:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 2px;

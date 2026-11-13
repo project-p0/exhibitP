@@ -3,6 +3,9 @@ let ALT_PRODUCTS = [];
 let altLoaded = false;
 let showingAlt = false;
 let activeCategory = "All";
+let activeVariant = null; // e.g. "6mg" -> show every available item with that strength
+let filterMode = "brand"; // "brand" (default on every load) or "strength"
+const FILTER_ICON = `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16l-6 7.2V19l-4 2v-8.8L4 5z"/></svg>`;
 
 const grid = document.getElementById("product-grid");
 const nav = document.getElementById("category-nav");
@@ -74,25 +77,99 @@ async function toggleCollection() {
 
   showingAlt = !showingAlt;
   activeCategory = "All";
+  activeVariant = null;
+  filterMode = "brand";
   searchInput.value = "";
   renderCategoryNav();
   render();
 }
 
-function renderCategoryNav() {
-  const categories = ["All", ...new Set(activeProducts().filter(p => !p.isDivider).map(p => p.category))];
-  nav.innerHTML = categories.map(cat => `
-    <button class="chip" data-cat="${escapeHtml(cat)}" aria-pressed="${cat === activeCategory}">${escapeHtml(cat)}</button>
-  `).join("");
+// Strength groups shown in "strength" mode. Each chip lists every available
+// item that has an mg variant inside the group; a group with nothing
+// available gets no chip, so a chip never opens an empty list.
+const STRENGTH_GROUPS = [
+  { label: "6mg",         test: mg => mg === 6 },
+  { label: "9mg - 12mg",  test: mg => mg >= 9 && mg <= 12 },
+  { label: "14mg - 17mg", test: mg => mg >= 14 && mg <= 17 },
+  { label: ">20mg",       test: mg => mg >= 20 } // includes 20mg itself
+];
 
-  nav.querySelectorAll(".chip").forEach(btn => {
+function parseMg(variant) {
+  const m = /^(\d+(?:\.\d+)?)\s*mg$/i.exec(String(variant).trim());
+  return m ? parseFloat(m[1]) : null;
+}
+
+function isAvailable(p) {
+  return p.stock !== "out";
+}
+
+// A chip label is either one of the mg groups above or an exact variant such as "5%".
+function matchesStrength(p, label) {
+  const group = STRENGTH_GROUPS.find(g => g.label === label);
+  return (p.variants || []).some(v => {
+    if (!group) return String(v).trim() === label;
+    const mg = parseMg(v);
+    return mg !== null && group.test(mg);
+  });
+}
+
+const PERCENT_RE = /^\d+(\.\d+)?\s*%$/;
+
+function strengthOptions() {
+  const live = activeProducts().filter(p => !p.isDivider && isAvailable(p));
+  const groups = STRENGTH_GROUPS.filter(g => live.some(p => matchesStrength(p, g.label))).map(g => g.label);
+  const percents = new Set();
+  live.forEach(p => (p.variants || []).forEach(v => {
+    const s = String(v).trim();
+    if (PERCENT_RE.test(s)) percents.add(s);
+  }));
+  return [...groups, ...[...percents].sort((x, y) => parseFloat(x) - parseFloat(y))];
+}
+
+function renderCategoryNav() {
+  const strengths = strengthOptions();
+  if (!strengths.length) filterMode = "brand";
+  const brands = [...new Set(activeProducts().filter(p => !p.isDivider).map(p => p.category))];
+
+  const chip = (attr, value, pressed) =>
+    `<button class="chip" ${attr}="${escapeHtml(value)}" aria-pressed="${pressed}">${escapeHtml(value)}</button>`;
+
+  let html = chip("data-cat", "All", !activeVariant && activeCategory === "All");
+  if (strengths.length) {
+    html += `<button class="chip filter-btn" type="button" id="filter-btn" aria-label="Filter by strength" aria-pressed="${filterMode === "strength"}">${FILTER_ICON}</button>`;
+  }
+  html += filterMode === "strength"
+    ? strengths.map(s => chip("data-variant", s, s === activeVariant)).join("")
+    : brands.map(cat => chip("data-cat", cat, !activeVariant && cat === activeCategory)).join("");
+  nav.innerHTML = html;
+
+  const selectable = nav.querySelectorAll(".chip[data-cat], .chip[data-variant]");
+  selectable.forEach(btn => {
     btn.addEventListener("click", () => {
-      activeCategory = btn.dataset.cat;
-      nav.querySelectorAll(".chip").forEach(b => b.setAttribute("aria-pressed", b === btn));
+      if (btn.dataset.variant) {
+        activeVariant = btn.dataset.variant;
+        activeCategory = "All";
+      } else {
+        activeVariant = null;
+        activeCategory = btn.dataset.cat;
+      }
+      selectable.forEach(b => b.setAttribute("aria-pressed", b === btn));
       render();
       btn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
     });
   });
+
+  const filterBtn = document.getElementById("filter-btn");
+  if (filterBtn) filterBtn.addEventListener("click", toggleFilterMode);
+}
+
+// Funnel button: grey = browse by brand (default), yellow = browse by strength.
+function toggleFilterMode() {
+  filterMode = filterMode === "strength" ? "brand" : "strength";
+  activeCategory = "All";
+  activeVariant = null;
+  renderCategoryNav();
+  render();
 }
 
 function render() {
@@ -104,13 +181,16 @@ function render() {
     if (p.isDivider) {
       // only show a divider when its category is actually on screen,
       // and hide it while searching (a floating gap mid-search looks broken)
-      return !query && (activeCategory === "All" || activeCategory === p.category);
+      return !query && !activeVariant && (activeCategory === "All" || activeCategory === p.category);
     }
     const inCategory = activeCategory === "All" || p.category === activeCategory;
     const matchesQuery = !query ||
       p.name.toLowerCase().includes(query) ||
       p.sku.toLowerCase().includes(query);
-    return inCategory && matchesQuery;
+    // strength view: available items only, kept in the same order as the main listing
+    const matchesVariant = !activeVariant ||
+      (isAvailable(p) && matchesStrength(p, activeVariant));
+    return inCategory && matchesQuery && matchesVariant;
   });
 
   const shownCount = displayItems.filter(p => !p.isDivider).length;
@@ -166,7 +246,7 @@ function renderCard(p, forceRowStart = false) {
         <span class="swatch-fallback">${escapeHtml(p.category)}</span>
         <img class="swatch-img" data-sku="${escapeHtml(p.sku)}" alt="${escapeHtml(p.name)}" loading="lazy">
       </div>
-      <span class="sku-tag">${escapeHtml(p.sku)}</span>
+      <span class="sku-tag">${activeVariant ? escapeHtml(p.category) + " · " : ""}${escapeHtml(p.sku)}</span>
       <h2 class="card-name">${escapeHtml(p.name)}</h2>
       <div class="variants">
         ${p.variants.map(v => `<span class="variant-chip">${escapeHtml(v)}</span>`).join("")}
