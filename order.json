@@ -1,0 +1,60 @@
+{
+  "_help": "Edit the order of the brand lists below. 'brands' sets the chip order in the top bar. 'strength' sets the brand order inside each strength chip; a strength not listed falls back to 'brands'. Brands left out of a list go last. Names must match products.json exactly.",
+  "brands": [
+    "BLISS",
+    "VELO",
+    "OVNS",
+    "ZOLT",
+    "WHITE FOX",
+    "ZYN",
+    "PABLO",
+    "NICOZY",
+    "Z-POUCHES"
+  ],
+  "strength": {
+    "6mg": [
+      "BLISS",
+      "VELO",
+      "OVNS",
+      "ZOLT",
+      "WHITE FOX",
+      "ZYN",
+      "PABLO",
+      "NICOZY",
+      "Z-POUCHES"
+    ],
+    "9mg - 12mg": [
+      "BLISS",
+      "VELO",
+      "OVNS",
+      "ZOLT",
+      "WHITE FOX",
+      "ZYN",
+      "PABLO",
+      "NICOZY",
+      "Z-POUCHES"
+    ],
+    "14mg - 17mg": [
+      "BLISS",
+      "VELO",
+      "OVNS",
+      "ZOLT",
+      "WHITE FOX",
+      "ZYN",
+      "PABLO",
+      "NICOZY",
+      "Z-POUCHES"
+    ],
+    ">20mg": [
+      "BLISS",
+      "VELO",
+      "ZOLT",
+      "WHITE FOX",
+      "ZYN",
+      "PABLO",
+      "OVNS",
+      "NICOZY",
+      "Z-POUCHES"
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 let PRODUCTS = [];
+let ORDER = { brands: [], strength: {} }; // from order.json (optional)
 let ALT_PRODUCTS = [];
 let altLoaded = false;
 let showingAlt = false;
@@ -31,6 +32,10 @@ async function init() {
     grid.innerHTML = `<p class="empty-state">Couldn't load products.json — check the file is in the same folder.</p>`;
     return;
   }
+  try {
+    const r = await fetch("order.json", { cache: "no-store" });
+    if (r.ok) ORDER = Object.assign({ brands: [], strength: {} }, await r.json());
+  } catch (err) { /* order.json is optional */ }
   renderCategoryNav();
   render();
   searchInput.addEventListener("input", render);
@@ -99,6 +104,14 @@ function parseMg(variant) {
   return m ? parseFloat(m[1]) : null;
 }
 
+// Stable sort by a brand list (order.json). Brands not listed keep their
+// original relative order and go after the listed ones.
+function sortByBrandList(items, list) {
+  if (!list || !list.length) return items;
+  const rank = c => { const i = list.indexOf(c); return i === -1 ? list.length : i; };
+  return items.map((p, i) => ({ p, i })).sort((a, b) => rank(a.p.category) - rank(b.p.category) || a.i - b.i).map(x => x.p);
+}
+
 function isAvailable(p) {
   return p.stock !== "out";
 }
@@ -129,7 +142,10 @@ function strengthOptions() {
 function renderCategoryNav() {
   const strengths = strengthOptions();
   if (!strengths.length) filterMode = "brand";
-  const brands = [...new Set(activeProducts().filter(p => !p.isDivider).map(p => p.category))];
+  const brands = sortByBrandList(
+    [...new Set(activeProducts().filter(p => !p.isDivider).map(p => p.category))].map(category => ({ category })),
+    showingAlt ? [] : ORDER.brands
+  ).map(p => p.category);
 
   const chip = (attr, value, pressed) =>
     `<button class="chip" ${attr}="${escapeHtml(value)}" aria-pressed="${pressed}">${escapeHtml(value)}</button>`;
@@ -177,7 +193,7 @@ function render() {
   const source = activeProducts();
   const realProducts = source.filter(p => !p.isDivider);
 
-  const displayItems = source.filter(p => {
+  let displayItems = source.filter(p => {
     if (p.isDivider) {
       // only show a divider when its category is actually on screen,
       // and hide it while searching (a floating gap mid-search looks broken)
@@ -192,6 +208,10 @@ function render() {
       (isAvailable(p) && matchesStrength(p, activeVariant));
     return inCategory && matchesQuery && matchesVariant;
   });
+
+  if (activeVariant && !showingAlt) {
+    displayItems = sortByBrandList(displayItems, (ORDER.strength && ORDER.strength[activeVariant]) || ORDER.brands);
+  }
 
   const shownCount = displayItems.filter(p => !p.isDivider).length;
   resultCount.textContent = `${shownCount} of ${realProducts.length} items`;
